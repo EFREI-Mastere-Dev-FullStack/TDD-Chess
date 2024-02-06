@@ -43,6 +43,14 @@ describe ChessBoard do
       expect { chessboard.get_position_by_coordinates('M4') }.to raise_error(RangeError)
     end
 
+    it 'should throw an exception if coordinates column is not a number' do
+      expect { chessboard.get_position_by_coordinates('CC') }.to raise_error(RangeError)
+    end
+
+    it 'should throw an exception if coordinates column is more than dimension (8)' do
+      expect { chessboard.get_position_by_coordinates('A9') }.to raise_error(RangeError)
+    end
+
 
   end
 end
