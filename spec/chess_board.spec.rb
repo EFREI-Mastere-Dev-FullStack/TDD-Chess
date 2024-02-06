@@ -5,6 +5,7 @@ describe ChessBoard do
     it "creates an 8x8 chessboard by default" do
       chessboard = ChessBoard.new
       expect(chessboard.board).to be_an Array
+      expect(chessboard.board.all? { |row| row.is_a?(Array) }) .to eq(true)
     end
   end
 end
