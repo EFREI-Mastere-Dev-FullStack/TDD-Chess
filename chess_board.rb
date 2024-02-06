@@ -12,6 +12,9 @@ class ChessBoard
     letter = coordinates[0]
     number = coordinates[1]
 
+    raise RangeError unless letter.match?(/[[:alpha:]]/)
+    raise RangeError if letter.upcase.ord > 'H'.ord
+
     column = letter.upcase.ord - 'A'.ord
     row = 8 - number.to_i
 
