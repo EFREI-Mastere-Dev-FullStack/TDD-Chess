@@ -2,8 +2,10 @@
 class ChessBoard
 
   attr_reader :board
+
+  CHESS_DIM = 8
   def initialize
-    @board = Array.new(8) { Array.new(8) }
+    @board = Array.new(CHESS_DIM) { Array.new(CHESS_DIM) }
   end
 
   def get_position_by_coordinates(coordinates)
