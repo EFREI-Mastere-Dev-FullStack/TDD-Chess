@@ -10,9 +10,20 @@ describe ChessBoard do
   end
 
   context '#get_position_by_coordinates' do
-    it 'return the position in the corner' do
-      chessboard = ChessBoard.new
+
+    chessboard = ChessBoard.new
+    it 'return the position in the corner at bottom left' do
       result = chessboard.get_position_by_coordinates('A1')
+      expect(result).to eq([7,0])
+    end
+
+    it 'return the middle position' do
+      result = chessboard.get_position_by_coordinates('E4')
+      expect(result).to eq([4,4])
+    end
+
+    it 'return the corner at the top right' do
+      result = chessboard.get_position_by_coordinates('H8')
       expect(result).to eq([0,7])
     end
   end
