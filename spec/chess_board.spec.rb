@@ -26,5 +26,14 @@ describe ChessBoard do
       result = chessboard.get_position_by_coordinates('H8')
       expect(result).to eq([0,7])
     end
+
+    it 'should throw an exception if coordinates have more than 2 characters' do
+      expect { chessboard.get_position_by_coordinates('H88') }.to raise_error(RangeError)
+    end
+
+    it 'should throw an exception if coordinates less than 2 characters' do
+      expect { chessboard.get_position_by_coordinates('C') }.to raise_error(RangeError)
+    end
+
   end
 end
