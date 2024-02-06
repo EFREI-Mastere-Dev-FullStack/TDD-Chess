@@ -35,5 +35,14 @@ describe ChessBoard do
       expect { chessboard.get_position_by_coordinates('C') }.to raise_error(RangeError)
     end
 
+    it 'should throw an exception if coordinates row is not a letter' do
+      expect { chessboard.get_position_by_coordinates('55') }.to raise_error(RangeError)
+    end
+
+    it 'should throw an exception if coordinates row is above "H" letter' do
+      expect { chessboard.get_position_by_coordinates('M4') }.to raise_error(RangeError)
+    end
+
+
   end
 end
