@@ -6,12 +6,14 @@ class ChessBoard
     @board = Array.new(8) { Array.new(8) }
   end
 
-  def get_position_by_coordinates(coordinates) #A1
+  def get_position_by_coordinates(coordinates)
+    raise RangeError if coordinates.size > 2 || coordinates.size < 2
+
     letter = coordinates[0]
     number = coordinates[1]
 
-    column = coordinates[0].upcase.ord - 'A'.ord
-    row = 8 - coordinates[1].to_i
+    column = letter.upcase.ord - 'A'.ord
+    row = 8 - number.to_i
 
     [row, column]
   end
